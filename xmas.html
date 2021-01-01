@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2021년 새해복 많이 받으세요</title>
+  <link rel="shortcut icon" href="https://image.flaticon.com/icons/png/128/2230/2230224.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+
+  <meta property="og:image" content="https://image.news1.kr/system/photos/2020/10/31/4457495/article.jpg/dims/optimize">
+  <meta property="og:title" content="2021년 신축년(辛丑年) 연하장">
+  <meta property="og:description" content="새해 복 많이 받으세요!">
+
+  <style>
+    * {
+      font-family: 'Poor Story', cursive;
+    }
+
+    body {
+      background-color: #9b070f;
+    }
+
+    h1 {
+      margin-top: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    .envelope {
+      width: 200px;
+      height: 200px;
+      background-image: url('https://pngimg.com/uploads/envelope/envelope_PNG18366.png');
+      background-size: cover;
+      background-position: center;
+
+      margin: 200px auto 0 auto;
+
+      cursor: pointer;
+    }
+
+    .envelope-msg {
+      color: white;
+      text-align: center;
+    }
+
+    .letter-close {
+      display: block;
+    }
+
+    .letter-open {
+      display: none;
+    }
+
+    .letter-title-img {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto 0 auto;
+
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0px 0px 10px 0px white;
+
+      background-color: white;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .msg-box {
+      width: 500px;
+
+      margin: auto;
+      padding: 30px;
+
+      font-size: 20px;
+      line-height: 30px;
+
+      color: brown;
+      background-color: ivory;
+
+      box-shadow: 0px 0px 10px 0px white;
+    }
+
+    .msg-from {
+      text-align: right;
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 760px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .envelope {
+        margin: 150px auto 0 auto;
+      }
+
+      .msg-box {
+        width: 300px;
+        padding: 20px;
+      }
+
+      .letter-title-img {
+        width: 150px;
+        height: 150px;
+        margin: 70px auto 0 auto;
+      }
+
+    }
+  </style>
+
+  <script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
+  <script>
+    window.onload = () => {
+      setRandomTitleImage();
+    };
+
+    function setRandomTitleImage() {
+
+      const imgIdx = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+      const titleImg = document.querySelector('.letter-title-img');
+      let imgLink = '';
+
+      if (imgIdx == 1) {
+        imgLink = 'https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/rtan.gif';
+      }
+      else if (imgIdx == 2) {
+        imgLink = 'https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/Webp.net-gifmaker.gif';
+      }
+      else if (imgIdx == 3) {
+        imgLink = 'https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/Webp.net-gifmaker+(2).gif';
+      }
+      else {
+        imgLink = 'https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/Webp.net-gifmaker+(1).gif';
+      }
+
+      titleImg.style.backgroundImage = `url("${imgLink}")`;
+    }
+
+    function openLatter() {
+      document.querySelector(".letter-close").style.display = 'none';
+      document.querySelector(".letter-open").style.display = 'block';
+    }
+
+    function showHiddenMessage() {
+      alert("새해 복 많이 받으세요 😍");
+      // window.location.href = "https://online.spartacodingclub.kr/mypage";
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="letter-close">
+    <div class="envelope" onclick="openLatter()"></div>
+    <h2 class="envelope-msg">봉투를 열어보세요!</h2>
+  </div>
+
+  <div class="letter-open">
+    <div class="letter-title-img" onclick="showHiddenMessage()"></div>
+
+    <h1>새해복 많이 받으세요 !</h1>
+
+    <div class="msg-box">
+      힘들었던 2020년은 모두 잊고 <br />
+      2021년 새해에는 모두 건강하고 <br />
+      좋은 일들만 가득하길 바랍니다 <br />
+      새해복 많이 받으세요 ! <br />
+      <p class="msg-from">2021.1.1 Jimmy</p>
+    </div>
+  </div>
+</body>
+
+</html>
